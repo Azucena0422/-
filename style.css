@@ -1,0 +1,302 @@
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f0f8ff;
+}
+
+/* 導覽欄 */
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #3c83f5;
+    padding: 10px 0;
+}
+
+.nav button {
+    background-color: #3c83f5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* 頭部區塊 */
+.header {
+    width: 100%;
+    text-align: center;
+    background-color: #b5d5f5;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro-text {
+    text-align: left;
+}
+
+/* 主要內容區塊 */
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* 聯絡資訊 */
+.aside.contact {
+    width: 35%;
+    background-color: #b5d5f5;
+    padding: 20px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; 
+}
+
+/* 教育背景 */
+.section.education {
+    width: 55%;
+    background-color: #b5d5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Skills 區塊樣式 */
+.section.skills {
+    width: 90%;
+    background-color: #b5d5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.skill-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.skill-item p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(#3c83f5 calc(var(--progress) * 1%), #e0e0e0 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.skill-item .progress-circle::before {
+    content: attr(data-progress) '%';
+    position: absolute;
+}
+
+/* 進度條數值 */
+.skill-item .progress-circle[data-progress="70"] { --progress: 70; }
+.skill-item .progress-circle[data-progress="60"] { --progress: 60; }
+.skill-item .progress-circle[data-progress="60"] { --progress: 60; }
+
+/* Interest 區塊樣式 */
+.section.interest {
+    width: 90%;
+    background-color: #b5d5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.interest-title {
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.interest-detail {
+    display: none;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+}
+
+.toggle:checked + .interest-title + .interest-detail {
+    display: block;
+}
+
+.interest-detail img {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 隱藏原本的 checkbox */
+.toggle {
+    display: none;
+}
+
+/* 將興趣 1 的 YouTube 嵌入影片設置為水平方向排列 */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.gallery iframe {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+/* 將興趣 2 的拍照圖片區塊設置為網格排列 */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 每行兩張圖片 */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* 經歷 */
+.experience {
+    width: 90%;
+    background-color: #b5d5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* 經驗區塊的圖片和影片展示區域 */
+.experience-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.experience-item {
+    flex: 1 1 180px; 
+    max-width: 300px; 
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.experience-item img,
+.experience-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.experience-item p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* 打工經歷區塊 */
+.work-experience {
+    background-color: #b5d5f5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.work-experience ul {
+    list-style-type: disc;
+    padding-left: 10px;
+    margin-left: 0%;
+}
+
+.work-experience li {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+
+/* 底部區塊 */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #3c83f5;
+    color: white;
+    font-size: 0.9em;
+}
